@@ -32,4 +32,9 @@ do
       then
          echo "Player first is winner"
 					break
+		fi
+		if [[ $FirstPosition -lt 0 ]]
+      then
+        playerFirst=0
       fi
+}
