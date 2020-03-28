@@ -4,7 +4,10 @@ FirstPosition=0
 CountDicePlayed=0
 numberofPlayer=2
 
-if [[ $numberofPlayer -eq 2 ]]
+function play() {
+while [[ $FirstPosition -ne 100 ]]
+do
+	if [[ $numberofPlayer -eq 2 ]]
 	then
 		diceNumber=$(( RANDOM%6+1 ))
 		echo "First player position:" $FirstPosition
@@ -24,3 +27,9 @@ if [[ $numberofPlayer -eq 2 ]]
 		then
 			FirstPosition=$(( $FirstPosition-$diceNumber ))
 		fi
+
+		if [[ $FirstPosition -eq 100 ]]
+      then
+         echo "Player first is winner"
+					break
+      fi
